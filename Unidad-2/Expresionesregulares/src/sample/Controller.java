@@ -16,7 +16,9 @@ public class Controller {
     @FXML protected void initialize(){
     listaEjer.getItems().addAll("Ejercicio 1","Ejercicio 2","No comienza con db-","Palabra termina con Count","Dos nombres","Validar una MAC address"
     ,"Empieza y termina con mayúscula","Validar numero binario","Validar un número Hexadecimal","Validar una operación de un digito","Número de control del ITSNCG"
-    ,"Validar CURP");
+    ,"Validar CURP","Validar que haya insertado X cantidad de pesos","Validar el número de una tarjeta de crédito Mastercard","Validar una Etiqueta HTML"
+   ,"Validar un color Hexadecimal","Validar un link","Validar el Query Insert into de SQL","Validar Sentencia if de xvariable con x condicion","Validar que se haya escrito una frase con salto de linea"
+    ,"Validar que se haya escrito una url con un video de youtube");
     }
     public void  procesar (ActionEvent event){
     int seleccion= listaEjer.getSelectionModel().getSelectedIndex();
@@ -69,6 +71,41 @@ public class Controller {
         case 11:{
             expresion="^([A-Z]{1})([AEIOU]{1})([A-Z]{2})([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])([HM]{1})(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)([B-DF-HJ-NP-TV-Z]{3})([0-9A-Z]{1})([0-9]{1})$";
             break;
+        }
+        case 12:{
+            expresion="(^[$])([0-9][0-9]{0,4})[.]([0-9]{1,2})(MXM$)";
+            break;
+        }
+        case 13:{
+            expresion="5[1-5][0-9]{14}$";
+            break;
+        }
+        case 14:{
+            expresion="(^<html>)[\\s][\\w]{1,}[\\s](</html>$)";
+            break;
+        }
+        case 15:{
+            expresion="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$";
+            break;
+        }
+        case 16:{
+            expresion="(^www.)([\\w]{1,})(.com|.mx|.org|.net)$";
+            break;
+        }
+        case 17:{
+            expresion="(^INSERT INTO)\\s([\\w]+)\\s(VALUES)\\s([(),_\\w]+$)";
+            break;
+        }
+        case 18:{
+            expresion="\"^(if)[(]([a-zA-Z]+[0-9]{0,})(==)([a-zA-Z]+[0-9]{0,})[)][{]$\"";
+            break;
+        }
+        case 19:{
+            expresion="(^[\\w].\\\\n.[\\w]$)";
+            break;
+        }
+        case 20:{
+            expresion="^(http://www[.]youtube[.]com/).*([a-zA-Z]+)((.){0,})([0-9]{0,})";
         }
 
 
