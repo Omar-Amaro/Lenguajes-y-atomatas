@@ -18,7 +18,8 @@ public class Controller {
     ,"Empieza y termina con mayúscula","Validar numero binario","Validar un número Hexadecimal","Validar una operación de un digito","Número de control del ITSNCG"
     ,"Validar CURP","Validar que haya insertado X cantidad de pesos","Validar el número de una tarjeta de crédito Mastercard","Validar una Etiqueta HTML"
    ,"Validar un color Hexadecimal","Validar un link","Validar el Query Insert into de SQL","Validar Sentencia if de xvariable con x condicion","Validar que se haya escrito una frase con salto de linea"
-    ,"Validar que se haya escrito una url con un video de youtube");
+    ,"Validar que se haya escrito una url con un video de youtube","Fecha corta o en ingles, nombre, un numero de control","Numero de control, fecha,numero de control, nombre de usuario, contraseña",
+            "Correo electronico","Contraseña que cumpla con ciertos parametros mayor o igual a 8 caracteres","Colocar un color RGB","La hora","Parecen coordenadas de latitud y longitud");
     }
     public void  procesar (ActionEvent event){
     int seleccion= listaEjer.getSelectionModel().getSelectedIndex();
@@ -107,7 +108,34 @@ public class Controller {
         case 20:{
             expresion="^(http://www[.]youtube[.]com/).*([a-zA-Z]+)((.){0,})([0-9]{0,})";
         }
-
+        case 21:{
+            //se puede usar con fechas cortas o en ingles, algun nombre
+            expresion="^[a-z0-9_-]{3,16}$";
+            break;
+        }
+        case 22:{
+            expresion="^[a-z0-9-]+$";
+            break;
+        }
+        case 23:{
+            expresion="^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$";
+            break;
+        }
+        case 24:{
+            expresion="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}";
+            break;
+        }
+        case 25:{
+            expresion="[Rr][Gg][Bb][(](((([\\d]{1,3})[1,]{0,1})[\\s]*){3})[)]";
+        }
+        case 26:{
+            expresion="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$";
+            break;
+        }
+        case 27:{
+            expresion="^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?),\\s*[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$";
+            break;
+        }
 
     }
         Pattern patron= Pattern.compile(expresion);
