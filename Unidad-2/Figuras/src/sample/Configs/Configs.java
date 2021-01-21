@@ -4,8 +4,8 @@ import java.util.regex.Pattern;
 
 public class Configs {
     public static final String[] KEYWORDS = new String[] {
-            "Cuadrado" ,"Rectángulo" ,"Circulo" ,"Triangulo","Rojo", "Amarillo",
-            "Azul", "Verde","Crear","Colorear","Escribir","Borrar"
+            "Cuadrado" ,"Rectangulo" ,"Circulo" ,"Triangulo","Rojo", "Amarillo",
+            "Azul", "Verde","Crear","Colorear","Escribir","Borrar","Figuras","Figura"
     };
 
     public static final String KEYWORD_PATTERN = "\\b(" + String.join("|", KEYWORDS) + ")\\b";
@@ -27,24 +27,25 @@ public class Configs {
     );
 
     public static final String sampleCode = String.join("\n", new String[] {
-            "Crear un Cuadrado de 4 lados",
-            "Crear un Triangulo de 3 lados",
-            "Crear un Circulo de 0 lados",
-            "Crear un Rectangulo",
+            "Crear un Cuadrado",
+            "Crear un Triangulo",
             "Crear un Circulo",
+            "Crear un Rectangulo",
+            "Borrar Imagenes",
             "Escribir nombre de Rectangulo",
-            "Borrar nombre de Cuadrado"
+            "Borrar nombre de Figura"
 
     });
     public static String [] expresiones={
-            "Crear un Cuadrado de 4 lados",
-            "Crear un Rectangulo de 4 lados",
-            "Crear un Circulo de 0 lados",
-            "Crear un Triangulo de 3 lados",
+            "Crear un Cuadrado",
+            "Crear un Rectangulo",
+            "Crear un Circulo",
+            "Crear un Triangulo",
             "Crear un (Cuadrado|Rectangulo|Circulo|Triangulo){1}",
-            "Borrar Figura",
+            "Borrar Figuras",
             "Escribir nombre de (Cuadrado|Rectangulo|Circulo|Triangulo){1}",
             "Borrar nombre de (Cuadrado|Rectangulo|Circulo|Triangulo){1}",
-            "Colorear (Cuadrado|Rectangulo|Circulo|Triangulo){1} de (Azul|Rojo|Amarillo|Verde){1}"
+            "Borrar Imagenes"
+
     };
 }

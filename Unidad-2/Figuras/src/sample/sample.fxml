@@ -4,9 +4,9 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-
 
 <BorderPane prefHeight="800.0" prefWidth="800.0" stylesheets="@Estilos/Estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <center>
@@ -41,4 +41,11 @@
    <bottom>
       <TextArea fx:id="consola" prefHeight="87.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
    </bottom>
+   <right>
+      <VBox fx:id="paneresultado" prefHeight="688.0" prefWidth="197.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="cuadrado1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+   </right>
 </BorderPane>

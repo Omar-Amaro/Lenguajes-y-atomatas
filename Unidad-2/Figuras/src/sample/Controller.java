@@ -4,6 +4,7 @@ import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import org.fxmisc.flowless.VirtualizedScrollPane;
@@ -29,6 +30,9 @@ import static sample.Interprete.TiposToken.arrayToken;
 public class Controller {
     @FXML VBox centro;
     @FXML TextArea consola;
+    @FXML VBox paneresultado;
+
+
     private CodeArea codeArea;
     private ExecutorService executor;
     @FXML protected void initialize(){
@@ -81,7 +85,7 @@ public class Controller {
         consola.setText(error);
         ///comenzar a compilar
         if (error.equals("")){
-            Compilador compilador= new Compilador(consola);
+            Compilador compilador= new Compilador(consola,paneresultado);
             for (int x=0;x<renglones.length;x++){
                 boolean res=compilador.compilar(renglones[x]);
                 if (res){
@@ -90,7 +94,7 @@ public class Controller {
             }
         }//llave if
         long t2=System.currentTimeMillis();
-        consola.appendText("\n Compilado en "+ (t2-t1) + "milisegundos";
+        consola.appendText("\n Compilado en "+ (t2-t1) + "milisegundos");
     }
 
     private Task<StyleSpans<Collection<String>>> computeHighlightingAsync() {
